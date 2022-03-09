@@ -78,7 +78,7 @@ export default function Star(item) {
                     <IconButton onClick={() => deleteProductInStar(elem.item.id)} color="warning">
                       <ClearIcon/> 
                     </IconButton>
-                    <Link to="/">
+                    <Link to="/?_limit=3&_page=1">
                         <Button>Back to main page</Button>
                     </Link>
                 </CardContent>

@@ -1,10 +1,9 @@
 import axios from 'axios';
 import React, { createContext, useEffect, useReducer, useState } from 'react';
 import { calcSubPrice, calcTotalPrice } from '../Helpers/CalcPrice';
-import { API } from '../Helpers/Constants';
+import { API, commentsAPI } from '../Helpers/Constants';
 import { auth } from '../Firebase'; 
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
-
 
 export const productContext = createContext()
 
@@ -346,7 +345,7 @@ const ProductContextProvider = ({children}) => {
             cart: state.cart,
             detail: state.detail,
             star: state.star,
-            starLength: state.starLength
+            starLength: state.starLength,
         }}>
             {children}
         </productContext.Provider>

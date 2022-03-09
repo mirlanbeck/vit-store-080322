@@ -215,7 +215,9 @@ export default function MyNavbar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            Vitamin Store
+            <Link to="/?_limit=3&_page=1" style={{color: "white", textDecoration: "none"}}>
+                Vitamin Store
+            </Link>
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -229,9 +231,9 @@ export default function MyNavbar() {
             />
           </Search>
           
-          <Box sx={{ flexGrow: 1 }} style={{textDecoration: "none"}}>
+          <Box sx={{ flexGrow: 1 }}>
             {currentUser?.email === "mail2mirlanbeck@gmail.com" ? (
-                <Link to='/add'>
+                <Link to='/add' style={{textDecoration: "none"}}>
                       <Button size="small" variant="contained" style={{background: "white", marginRight: "15px", color: "darkgreen"}} >Add</Button>
                 </Link>
             ) : null }
@@ -241,7 +243,7 @@ export default function MyNavbar() {
             }
             {
                 currentUser ? (
-                    <Link to="/"> 
+                    <Link to="/" style={{textDecoration: "none"}}> 
                       <Button size="small" style={{background: "#eeff41", marginLeft: "15px", color: "darkred"}} variant="contained" disabled={!currentUser} onClick={handleLogout}>
                           Log out
                       </Button>

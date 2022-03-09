@@ -21,10 +21,12 @@ const MyRoutes = () => {
                     <Route path="/" element={<Home/>}/>
                     <Route path="/edit/:id" element={<EditProduct/>} />
                     <Route path="/detail/:id" element={<ProductDetail/>} />
+                    {/* <Route path="/add/comment" element={<AddComment/>} /> */}
                     <Route path="/cart" element={<Cart/>} />
                     <Route path="/login" element={<Login/>} />
                     <Route path="/signup" element={<SignUp/>} />
                     <Route path="/star" element={<Star/>} />
+                    {/* <Route path="/payment" element={<CreditCard/>} /> */}
                 </Routes>
             </BrowserRouter>
         </ProductContextProvider>

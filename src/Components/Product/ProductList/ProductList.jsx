@@ -1,12 +1,13 @@
 import { Box, Container, Grid, Pagination, Stack } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { productContext } from '../../../Contexts/ProductContext';
+
 import ProductCard from '../ProductCard/ProductCard';
 
 const ProductList = () => {
-    const { products, getProducts, paginatedPages } = useContext(productContext)
+    const { comments, products, getProducts, getComments, paginatedPages } = useContext(productContext)
     const search = new URLSearchParams(window.location.search)
 
     const [searchParams, setSearchParams] = useSearchParams()
@@ -16,6 +17,7 @@ const ProductList = () => {
 
     useEffect(() => {
         getProducts()
+        // getComments()
     }, [])
 
     useEffect(() => {
@@ -30,13 +32,14 @@ const ProductList = () => {
         navigate(newPath)
         setSearchParams({"_page": pageVal, "_limit": limit})
         getProducts()
+        // getComments()
         setPage(pageVal)
         navigate("/")
     } 
 
     return (
         <Box sx={{flexGrow: 1, margin: 4}}>
-            <Container maxWidth="xl" maxHeight="auto">
+            <Container maxWidth="xl">
                 <Carousel variant="dark">
                     <Carousel.Item>
                         <img
@@ -93,6 +96,7 @@ const ProductList = () => {
                             style={{display: "flex", justifyContent: "center"}}
                         />
                 </Stack>
+                
             </Container>
         </Box>
     );

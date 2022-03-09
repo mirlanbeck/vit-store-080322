@@ -102,7 +102,7 @@ export default function Cart () {
                             <Link to="/payment">
                                 <Button className='btn-buy' variant='contained' color="success">Buy</Button>
                             </Link>
-                            <Link to="/">
+                            <Link to="/?_limit=3&_page=1">
                                 <Button variant="contained" color="success">Back to main page</Button>
                             </Link>
                         </TableCell>
